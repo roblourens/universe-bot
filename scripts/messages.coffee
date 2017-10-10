@@ -14,13 +14,10 @@ module.exports = (robot) ->
     res.send " > My favorites are apples and grapes."
 
   robot.respond /movie/gim, (res) ->
-    res.send " > My favorite movie is The Wizard of Oz"
+    res.send " > My favorite movie is Blues Brothers"
 
   robot.respond /lunch/gim, (res) ->
     res.send " > I want several peanut butter and jelly sandwiches for lunch today."
 
   robot.respond /add (\d+) and (\d+)/i, (res) ->
     res.send " > Result is " + (parseInt(res.match[1]) + parseInt(res.match[2]))
-
-  robot.respond /ping/gim, (res) ->
-    res.send " > pong!"
