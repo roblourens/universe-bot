@@ -18,3 +18,13 @@ module.exports = (robot) ->
 
   robot.respond /lunch/gim, (res) ->
     res.send " > I want several peanut butter and jelly sandwiches for lunch today."
+    
+  robot.respond /add (\d+) and (\d+)/i, (res) ->
+    res.send " > Result is " + (parseInt(res.match[1]) + parseInt(res.match[2]))
+
+  robot.respond /open the (.*) doors/i, (res) ->
+    doorType = res.match[1]
+    if doorType is "pod bay"
+      res.reply "I'm afraid I can't let you do that."
+    else
+      res.reply "Opening #{doorType} doors"
