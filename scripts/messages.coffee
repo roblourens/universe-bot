@@ -18,6 +18,9 @@ module.exports = (robot) ->
 
   robot.respond /lunch/gim, (res) ->
     res.send " > I want several peanut butter and jelly sandwiches for lunch today."
-    
+
   robot.respond /add (\d+) and (\d+)/i, (res) ->
     res.send " > Result is " + (parseInt(res.match[1]) + parseInt(res.match[2]))
+
+  robot.respond /ping/gim, (res) ->
+    res.send " > pong!"
