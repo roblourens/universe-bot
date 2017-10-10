@@ -7,7 +7,7 @@ module.exports = (robot) ->
   robot.respond /universe/gim, (res) ->
     res.send "> GitHub is great, and Training Day is greater!!"
 
-  robot.respond /USERNAME/gim, (res) ->
+  robot.respond /roblourens/gim, (res) ->
     res.send " > That person is awesome"
 
   robot.respond /fruit/gim, (res) ->
@@ -17,4 +17,7 @@ module.exports = (robot) ->
     res.send " > My favorite movie is The Wizard of Oz"
 
   robot.respond /lunch/gim, (res) ->
-    res.send " > I want a peanut butter and jelly sandwich for lunch today."
+    res.send " > I want several peanut butter and jelly sandwiches for lunch today."
+    
+  robot.respond /add (\d+) and (\d+)/i, (res) ->
+    res.send " > Result is " + (parseInt(res.match[1]) + parseInt(res.match[2]))
